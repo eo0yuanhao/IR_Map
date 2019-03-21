@@ -1,0 +1,6 @@
+gui/bin/
+gui/obj/
+packages/
+IR_Map/bin/
+IR_Map/obj/
+.vs/
