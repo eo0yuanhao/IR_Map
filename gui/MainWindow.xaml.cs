@@ -33,6 +33,8 @@ namespace gui
             
 
         }
+        public delegate void OperateMode_Change_EventHandler(object sender, EventArgs e);
+        public event OperateMode_Change_EventHandler OperateMode_Changed;
         public MainWindow()
         {
             InitializeComponent();
@@ -49,9 +51,17 @@ namespace gui
         {
             get { return _opMode; }
             set {
+                if (_opMode == value)
+                    return;
+
                 _opMode = value;
                 RadioButton r = operateMode_can.Children[(int)value] as RadioButton;
                 r.IsChecked = true;
+                if(OperateMode_Changed != null)
+                {
+                    OperateMode_Changed(this, new EventArgs());
+                }
+                
             }
         }
     }

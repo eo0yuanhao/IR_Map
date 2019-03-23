@@ -21,7 +21,7 @@
                 </StackPanel>
             </GroupBox>
         </StackPanel>
-        <Canvas Grid.Column="1" />
+        <Canvas Grid.Column="1" x:Name="canvas" MinWidth="100" MinHeight="100" ClipToBounds="True"/>
 
     </Grid>
 </Window>
